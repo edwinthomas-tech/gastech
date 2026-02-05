@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GASTECH | About Project</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<script src="js/cursor.js"></script>
+<script src="js/magnifier.js"></script>
+<script src="js/textReveal.js"></script>
+
+
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">GASTECH</a>
+
+
+  <nav class="nav-links">
+    <a href="index.html" data-page="index">Home</a>
+    <a href="about.html" data-page="about">About Project</a>
+    <a href="report.html" data-page="report">Report</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+  </nav>
+
+  <a href="login.html" class="btn-primary">Try App</a>
+</header>
+
+
+
+<main class="about-container">
+
+  <!-- INTRO -->
+  <section class="about-hero">
+    <h1>About the Project</h1>
+    <p>
+      GASTECH is an IoT-based LPG gas level monitoring system designed to provide
+      real-time visibility into cylinder usage and help users avoid unexpected gas shortages.
+    </p>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="about-video">
+    <h2>Project Demonstration</h2>
+
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/7WZ5_OIERMg"
+        title="GASTECH Demo Video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="caption">
+      Demonstration video showcasing real-time LPG level monitoring and dashboard visualization.
+    </p>
+  </section>
+
+  <!-- PROBLEM STATEMENT -->
+  <section class="about-section">
+    <h2>Problem Statement</h2>
+    <p>
+      Conventional LPG cylinders do not provide any mechanism to indicate the remaining gas level.
+      Users are forced to rely on manual methods or assumptions, which often leads to sudden gas
+      depletion during critical usage times. This results in inconvenience, safety concerns, and
+      inefficient gas management.
+    </p>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="about-section alt">
+    <h2>Proposed Solution</h2>
+    <p>
+      The proposed system continuously measures the weight of the LPG cylinder using a load cell.
+      The sensed data is amplified through an HX711 module and processed by an ESP32 microcontroller.
+      The system computes the gas percentage and uploads it to a cloud-based Firebase Realtime Database.
+      A web application retrieves this data in real time to display gas levels, usage trends, and
+      estimated days remaining.
+    </p>
+  </section>
+
+  <!-- IMPLEMENTATION -->
+  <section class="about-section">
+    <h2>System Implementation</h2>
+    <ul>
+      <li>Weight sensing using strain gauge load cell</li>
+      <li>Signal amplification using HX711 ADC</li>
+      <li>ESP32 for computation and Wi-Fi connectivity</li>
+      <li>Firebase Realtime Database for cloud storage</li>
+      <li>Web-based dashboard for visualization and analytics</li>
+    </ul>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+  <section class="about-section alt">
+    <h2>Technologies Used</h2>
+    <div class="tech-grid">
+      <div class="tech-card">ESP32</div>
+      <div class="tech-card">HX711</div>
+      <div class="tech-card">Load Cell</div>
+      <div class="tech-card">Firebase RTDB</div>
+      <div class="tech-card">HTML, CSS, JavaScript</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand / About -->
+    <div class="footer-col">
+      <h3 class="footer-logo">GASTECH</h3>
+      <p class="footer-text">
+        GASTECH is a smart LPG gas level monitoring system developed as an
+        academic project to bring visibility, safety, and predictability
+        to everyday gas usage.
+      </p>
+      <p class="footer-meta">
+        S6 ECE Mini Project<br>
+        Batch 2023–2027
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Project</a></li>
+        <li><a href="report.html">Project Report</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Try App</a></li>
+      </ul>
+    </div>
+
+    <!-- Project Info -->
+    <div class="footer-col">
+      <h4>Project Info</h4>
+      <ul>
+        <li>ESP32 + Load Cell</li>
+        <li>Firebase Realtime DB</li>
+        <li>Web Dashboard</li>
+        <li>SMS Alerts (Fast2SMS)</li>
+        <li>IoT-based Monitoring</li>
+      </ul>
+    </div>
+
+    <!-- Updates / Contact -->
+    <div class="footer-col">
+      <h4>Stay Updated</h4>
+      <p class="footer-text small">
+        Get updates on features, improvements, and project progress.
+      </p>
+
+      <form class="footer-form">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+
+      <p class="footer-contact">
+         gastech.ece@gmail.com<br>
+         gastech.online
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    © 2026 GASTECH | Developed by S6 ECE students,  
+    Viswajyothi College of Engineering and Technology, Vazhakulam
+  </div>
+</footer>
+
+</body>
+</html>

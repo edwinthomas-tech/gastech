@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GASTECH | Reports</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=League+Gothic&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/preport.css">
+
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- NAVBAR (same as others) -->
+<header class="navbar">
+  <a href="index.html" class="logo">GASTECH</a>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Project</a>
+    <a href="report.html">Report</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <a href="app.html" class="btn-primary">Dashboard</a>
+</header>
+
+<!-- ================= REPORT CONTENT ================= -->
+<main class="report-container">
+
+  <h1 class="report-title">Gas Usage Reports</h1>
+
+  <!-- Controls -->
+  <div class="report-controls">
+    <label for="limitSelect">Select readings:</label>
+
+    <select id="limitSelect">
+      <option value="10">Last 10</option>
+      <option value="30">Last 30</option>
+      <option value="50">Last 50</option>
+    </select>
+
+    <button class="btn-secondary" id="downloadPdf">
+      Download PDF
+    </button>
+  </div>
+
+  <!-- Chart -->
+  <div class="report-card">
+    <canvas id="gasChart" height="120"></canvas>
+  </div>
+
+  <!-- Table -->
+  <table class="report-table">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Gas Percentage (%)</th>
+      </tr>
+    </thead>
+    <tbody id="reportTable"></tbody>
+  </table>
+
+</main>
+
+
+<!-- JS -->
+<script src="js/cursor.js"></script>
+<script src="js/navActive.js"></script>
+<script type="module" src="js/preport.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="js/pdf.js"></script>
+
+</body>
+</html>

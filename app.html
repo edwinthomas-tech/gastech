@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GASTECH | Dashboard</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=League+Gothic&family=Michroma&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="logo">GASTECH</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <button id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+
+    <!-- ================= STATUS ROW ================= -->
+    <section class="grid-row">
+      <div class="card">
+        <h3>Connection Status</h3>
+        <p id="connectionStatus" class="status pending">Checking...</p>
+      </div>
+
+      <div class="card highlight">
+        <h3>Gas Level</h3>
+        <div class="percentage" id="gasPercentage">--%</div>
+        <p class="updated" id="lastUpdated">Last updated: --</p>
+      </div>
+
+      <div class="card">
+        <h3>Current Status</h3>
+        <!-- SAME STYLE AS GAS LEVEL -->
+        <div class="percentage" id="gasStatus">--</div>
+      </div>
+    </section>
+
+    <!-- ================= MAIN GRID (FIXED) ================= -->
+    <section class="grid-row grid-3">
+
+      <!-- LEFT COLUMN -->
+      <div class="stack">
+        <div class="card">
+          <h3>Estimated Days Remaining</h3>
+          <p class="days" id="daysRemaining">-- days</p>
+        </div>
+
+        <div class="card">
+          <h3>Safety Precaution</h3>
+          <p id="safetyQuote"></p>
+        </div>
+      </div>
+
+      <!-- MIDDLE COLUMN -->
+      <div class="stack">
+        <div class="card action">
+          <h3>Book Gas Cylinder</h3>
+          <a href="https://paytm.com/cylinder-gas-recharge"
+             target="_blank"
+             class="btn-primary">
+            Book Now
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>Gas Saving Tip</h3>
+          <p id="savingQuote"></p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="card action tall">
+        <h3>Detailed Reports</h3>
+        <p>
+          View gas usage trends, analyze historical readings,
+          and download professional PDF reports.
+        </p>
+        <a href="preport.html" class="btn-primary">
+          View Reports
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/cursor.js"></script>
+  <script src="js/magnifier.js"></script>
+  <script src="js/textReveal.js"></script>
+
+  <!-- App Logic -->
+  <script type="module" src="js/app.js"></script>
+  <script src="js/quotes.js"></script>
+
+</body>
+</html>

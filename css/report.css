@@ -1,0 +1,46 @@
+.report-container {
+  padding: 40px 60px;
+}
+
+.report-hero h1 {
+  font-family: 'League Gothic', sans-serif;
+  font-size: 54px;
+}
+
+.report-hero p {
+  max-width: 760px;
+  margin-top: 14px;
+}
+
+/* SECTIONS */
+.report-section {
+  margin-top: 70px;
+}
+
+.report-section.alt {
+  background: rgba(0,0,0,0.04);
+  padding: 40px;
+  border-radius: 18px;
+}
+
+.report-section h2 {
+  font-family: 'League Gothic', sans-serif;
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+
+.report-section p {
+  max-width: 720px;
+  margin-bottom: 18px;
+}
+
+/* RESOURCES */
+.resource-list {
+  list-style: disc;
+  padding-left: 22px;
+}
+
+.resource-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}

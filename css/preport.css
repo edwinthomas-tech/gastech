@@ -1,0 +1,98 @@
+/* ================= REPORT PAGE ================= */
+
+.report-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 40px 80px;
+}
+
+/* Heading */
+.report-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--deep-green);
+}
+
+/* Controls row */
+.report-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.report-controls label {
+  font-weight: 500;
+}
+
+.report-controls select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--fern);
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.report-controls select:focus {
+  outline: none;
+  border-color: var(--pine);
+}
+
+/* Chart card */
+.report-card {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  margin-bottom: 50px;
+}
+
+/* Table */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.report-table thead {
+  background: var(--fern);
+  color: #fff;
+}
+
+.report-table th,
+.report-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.report-table tbody tr {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.report-table tbody tr:hover {
+  background: rgba(88, 129, 87, 0.08);
+}
+
+/* PDF Button refinement */
+.report-controls .btn-secondary {
+  border-width: 2px;
+  padding: 10px 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .report-title {
+    font-size: 28px;
+  }
+
+  .report-container {
+    padding: 40px 20px 60px;
+  }
+}

@@ -1,0 +1,154 @@
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--deep-green) 0%,
+    var(--pine) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper */
+.login-wrapper {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: var(--dust-grey);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+}
+
+/* Brand Side */
+.login-brand {
+  background: linear-gradient(
+    160deg,
+    var(--fern),
+    var(--deep-green)
+  );
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.brand-title {
+  font-family: 'League Gothic', sans-serif;
+  font-size: 52px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.brand-tagline {
+  font-size: 15px;
+  opacity: 0.85;
+  max-width: 260px;
+}
+
+/* Login Card */
+.login-card {
+  padding: 60px 60px;
+}
+
+.login-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--deep-green);
+}
+
+.login-subtext {
+  font-size: 14px;
+  color: #5f6f64;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-card input {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+  font-size: 14px;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: var(--fern);
+}
+
+/* Button override */
+.login-card .btn-primary {
+  margin-top: 8px;
+}
+
+/* Demo Box */
+.demo-box {
+  margin-top: 26px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--sage);
+  font-size: 13px;
+  color: var(--deep-green);
+}
+
+.demo-box span {
+  font-weight: 600;
+}
+
+/* Help */
+.login-help {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.login-help a {
+  color: var(--fern);
+  text-decoration: none;
+}
+
+.login-help a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .login-brand {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .brand-tagline {
+    margin: auto;
+  }
+
+  .login-card {
+    padding: 40px;
+  }
+}
+/* Restore default cursor for login page */
+.login-page {
+  cursor: default !important;
+}
+
+/* Disable custom cursor elements on login */
+.login-page .cursor-dot,
+.login-page .cursor-ring {
+  display: none !important;
+}

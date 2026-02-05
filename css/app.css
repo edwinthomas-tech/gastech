@@ -1,0 +1,143 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  align-items: center;
+}
+
+.app-header nav a,
+.app-header nav button {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--deep-green);
+}
+
+.dashboard {
+  padding: 30px 50px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--sage);
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.card.highlight {
+  background: var(--fern);
+  color: #fff;
+}
+
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.percentage {
+  font-family: 'Michroma', sans-serif;
+  font-size: 48px;
+}
+
+.days {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.status.connected { color: green; }
+.status.offline { color: red; }
+
+.updated {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.percentage {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+.status.good { color: #2e7d32; }
+.status.normal { color: #558b2f; }
+.status.low { color: #f9a825; }
+.status.critical { color: #c62828; }
+
+.status.connected::before {
+  content: "● ";
+  color: green;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.4; }
+}
+#safetyQuote, #savingQuote {
+  transition: opacity var(--duration-med) var(--ease-out);
+}
+#safetyQuote,
+#savingQuote {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--deep-green);
+  animation: fadeQuote 0.6s ease;
+}
+
+@keyframes fadeQuote {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.metric-value {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 10px 0;
+}
+
+.status-critical {
+  color: #d32f2f;
+}
+/* ===== DASHBOARD GRID FIX ===== */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 26px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.card.tall {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
