@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     sessionStorage.setItem("gastech_auth", "true");
 
     // Redirect to dashboard
-    window.location.href = "app.html";
+    window.location.href = "addContacts.html";
   } else {
     alert("Invalid credentials. Please use demo credentials.");
   }

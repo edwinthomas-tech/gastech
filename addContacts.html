@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GASTECH | Alert Setup</title>
+
+  <!-- MAIN THEME -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    /* ================= PAGE DEPTH ================= */
+
+    .alert-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      background:
+        radial-gradient(1200px 400px at top, rgba(163,177,138,0.25), transparent 60%),
+        var(--dust-grey);
+    }
+
+    /* ================= CARD ================= */
+
+    .alert-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 44px 40px 40px;
+      max-width: 540px;
+      width: 100%;
+      animation: cardEnter 0.8s var(--ease-out);
+    }
+
+    @keyframes cardEnter {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* ================= HEADER ================= */
+
+    .alert-header {
+      margin-bottom: 28px;
+    }
+
+    .alert-header h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--deep-green);
+    }
+
+    .alert-header p {
+      font-size: 14px;
+      color: var(--pine);
+      margin-top: 4px;
+    }
+
+    /* ================= STEP INDICATOR ================= */
+
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--fern);
+      margin-bottom: 18px;
+    }
+
+    .step-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--fern);
+    }
+
+    /* ================= INPUT ROW ================= */
+
+    .alert-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+      animation: rowAdd 0.4s var(--ease-out);
+    }
+
+    @keyframes rowAdd {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .alert-row input {
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.14);
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition:
+        border var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out);
+    }
+
+    .alert-row input:focus {
+      outline: none;
+      border-color: var(--fern);
+      box-shadow: 0 0 0 3px rgba(88,129,87,0.18);
+    }
+
+    /* ================= ACTIONS ================= */
+
+    .alert-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Loading state */
+    .btn-loading {
+      pointer-events: none;
+      opacity: 0.85;
+      position: relative;
+    }
+
+    .btn-loading::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ================= SUCCESS OVERLAY ================= */
+
+    .success-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(218, 215, 205, 0.75);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .success-overlay.hidden {
+      display: none;
+    }
+
+    .success-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 42px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: scaleIn 0.5s var(--ease-out);
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.85);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .checkmark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: var(--fern);
+      color: #fff;
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pop 0.6s var(--ease-out);
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      70% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .success-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--deep-green);
+      margin-bottom: 6px;
+    }
+
+    .success-text {
+      font-size: 14px;
+      color: var(--pine);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="alert-page">
+    <div class="card alert-card">
+
+      <div class="alert-header">
+        <div class="step-indicator">
+          <div class="step-dot"></div>
+          <span>Alert setup</span>
+        </div>
+
+        <h2>Gas Alert Recipients</h2>
+        <p>Indian mobile numbers only (10 digits, +91 assumed)</p>
+      </div>
+
+      <div id="rows"></div>
+
+      <div class="alert-actions">
+        <button id="addBtn" class="btn-primary" type="button">
+          Add Contact
+        </button>
+
+        <button id="saveBtn" class="btn-secondary" type="button">
+          Save & Continue
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SUCCESS OVERLAY -->
+  <div id="successOverlay" class="success-overlay hidden">
+    <div class="success-card">
+      <div class="checkmark">✓</div>
+      <div class="success-title">Saved Successfully</div>
+      <div class="success-text">
+        Alert contacts have been configured
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE SCRIPT -->
+  <script type="module" src="js/addContacts.js"></script>
+
+  <!-- CURSOR -->
+  <script src="js/cursor.js"></script>
+
+</body>
+</html>
